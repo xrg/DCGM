@@ -8,3 +8,21 @@ _out/
 .vscode/vscode-kanban.json
 tags
 cscope.out
+
+# CMake generated
+CMakeFiles/
+CMakeCache.txt
+Makefile
+CPackConfig.cmake
+CPackSourceConfig.cmake
+CTestTestfile.cmake
+DartConfiguration.tcl
+Testing/
+cmake_install.cmake
+
+# compiled
+*.a
+*.so
+lib*.so.*
+
+dcgm_decode_db.txt
