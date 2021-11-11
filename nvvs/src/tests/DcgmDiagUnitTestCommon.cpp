@@ -18,6 +18,8 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <vector>
+#include <cstring>
+#include <cerrno>
 
 char ourTempDir[] = "/tmp/dcgm-diag-test-XXXXXX";
 
@@ -35,12 +37,20 @@ std::string createTmpFile(const char *prefix)
     int ret = mkstemp(&pathStr[0]);
     if (ret == -1)
     {
-        throw std::runtime_error("Could not create temp file" + pathStr);
+        std::string err{"Could not create temp file "};
+        err += pathStr;
+        err += " : ";
+        err += std::strerror(errno);
+        throw std::runtime_error(err);
     }
     ret = chmod(&pathStr[0], 0600);
     if (ret == -1)
     {
-        throw std::runtime_error("Could not chmod temp file" + pathStr);
+        std::string err{"Could not chmod temp file "};
+        err += pathStr;
+        err += " : ";
+        err += std::strerror(errno);
+        throw std::runtime_error(err);
     }
     close(ret);
     return pathStr;
@@ -48,7 +58,12 @@ std::string createTmpFile(const char *prefix)
 
 NvvsTests::NvvsTests()
 {
-    createTmpDir();
+    if (createTmpDir())
+    {
+        std::string err = "Cannot create tmp dir for tests: ";
+        err += std::strerror(errno);
+        throw std::runtime_error(err);
+    }
 }
 
 NvvsTests::~NvvsTests()
