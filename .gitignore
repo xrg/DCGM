@@ -20,6 +20,14 @@ DartConfiguration.tcl
 Testing/
 cmake_install.cmake
 
+# generated
+*tests_include-*.cmake
+/rt.props
+common/DcgmBuildInfo.cpp
+common/protobuf/dcgm.pb.cc
+common/protobuf/dcgm.pb.h
+testing/version.py
+
 # compiled
 *.a
 *.so
