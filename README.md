@@ -1,10 +1,13 @@
 # NVIDIA Data Center GPU Manager
 
-![dcgm](https://developer.nvidia.com/sites/default/files/akamai/datacenter/dcgm-icon.png)
+[![GitHub license](https://img.shields.io/github/license/NVIDIA/dcgm?style=flat-square)](https://raw.githubusercontent.com/NVIDIA/dcgm/master/LICENSE)
+=======================
 
 Data Center GPU Manager (DCGM) is a daemon that allows users to monitor NVIDIA
 data-center GPUs. You can find out more about DCGM by visiting [DCGM's official
 page](https://developer.nvidia.com/dcgm)
+
+![dcgm](https://developer.nvidia.com/sites/default/files/akamai/datacenter/dcgm-icon.png)
 
 ## Introduction
 
@@ -12,7 +15,7 @@ NVIDIA Data Center GPU Manager (DCGM) is a suite of tools for managing and monit
 
 DCGM simplifies GPU administration in the data center, improves resource reliability and uptime, automates administrative tasks, and helps drive overall infrastructure efficiency. DCGM supports Linux operating systems on x86_64, Arm and POWER (ppc64le) platforms. The installer packages include libraries, binaries, NVIDIA Validation Suite (NVVS) and source examples for using the API (C, Python and Go).
 
-DCGM integrates into the Kubernetes ecosystem by allowing users to gather GPU telemetry using [dcgm-exporter](https://github.com/NVIDIA/gpu-monitoring-tools).
+DCGM integrates into the Kubernetes ecosystem by allowing users to gather GPU telemetry using [dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter).
 
 More information is available on [DCGM's official page](https://developer.nvidia.com/dcgm)
 
