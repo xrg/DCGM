@@ -27,7 +27,7 @@ endif ()
 
 if (Libevent_FOUND)
     if (NOT Libevent_FIND_QUIETLY)
-        message(STATUS "Found libevent: ${LIBEVENT_LIB}")
+        message(STATUS "Found libevent: ${LIBEVENT_STATIC_LIB}")
     endif ()
 else ()
     if (Libevent_FIND_REQUIRED)
